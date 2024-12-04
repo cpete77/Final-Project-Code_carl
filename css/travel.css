@@ -1,0 +1,251 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background: linear-gradient(45deg, lightblue, darkblue);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  
+  header .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+   header  nav ul li {
+      margin-right: 10px;
+      position: relative;
+    }
+    
+    header  nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+  
+    header nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: white;
+      left: 50%;
+      bottom: 0;
+      transition: all 0.3s ease;
+    }
+  
+    header nav ul li a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    header nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: white;
+      color: #333;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .dropdown-menu li {
+      padding: 5px 15px;
+    }
+    
+    .dropdown-menu li a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 5px 10px;
+    }
+    
+    .dropdown-menu li a:hover {
+      background: darkblue;
+      color: white;
+      border-radius: 3px;
+    }
+
+
+.main {
+    grid-area: main;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.trip-overview {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trip-overview h1 {
+    font-size: 2rem;
+    color: darkblue;
+}
+
+.trip-overview p {
+    font-size: 1.2rem;
+    color: grey;
+    line-height: 1.6;
+}
+
+/* Photo Gallery Section */
+.photo-gallery {
+    margin-top: 20px;
+}
+
+.photo-gallery h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: darkblue;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 20px;
+    padding: 15px;
+    justify-items: center; 
+    align-items: center; 
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+}
+
+.card {
+    width: 100%; 
+    max-width: 400px; 
+    perspective: 1000px; 
+    position: relative;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%; 
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    transition: transform 0.6s ease;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg); 
+}
+
+
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+}
+
+.card-front img {
+    width: 100%;
+    height: auto; 
+    object-fit: contain; 
+    max-height: 100%;
+    border-radius: 8px;
+    max-height: 100%;
+}
+
+.card-back {
+    background: linear-gradient(45deg, lightblue, darkblue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    transform: rotateY(180deg);
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .card-back {
+        font-size: 0.9rem;
+    }
+}

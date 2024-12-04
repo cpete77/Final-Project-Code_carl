@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carl's Portfolio</title>
+  <link rel="stylesheet" href="css/interests.css">
+</head>
+<body>
+  <div class="grid-container">
+    <header class="header">
+      <div class="logo">Carl's Portfolio</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Travel</a>
+            <ul class="dropdown-menu">
+              <li><a href="spain.html">Spain</a></li>
+              <li><a href="germany.html">Germany</a></li>
+              <li><a href="italy.html">Italy</a></li>
+              <li><a href="westUS.html">West US</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Interests</a>
+            <ul class="dropdown-menu">
+              <li><a href="water-skiing.html">Water Skiing</a></li>
+              <li><a href="snow-skiing.html">Snow Skiing</a></li>
+              <li><a href="climbing.html">Climbing</a></li>
+            </ul>
+          </li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+        <section class="intro">
+            <h1>Snow Skiing</h1>
+            <p>I've been skiing my whole life. I mainly ski in New Hampshire but have been going on western US ski trips with my friends the last couple years. Our last three big trips were Breckenridge, Colorado, Park City, Utah and Lake Tahoe, California.</p>
+        </section>
+
+        <section class="photo-gallery">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <img src="static/Skiing/20230309_152728-PANO.jpg" alt="Snow Skiing 1">
+                <img src="static/Skiing/20240311_130109.jpg" alt="Snow Skiing 2">
+                <img src="static/Skiing/20240312_120750.jpg" alt="Snow Skiing 3">
+                <img src="static/Skiing/ski1.jpg" alt="Snow Skiing 4">
+                <img src="static/Skiing/ski2.jpg" alt="Snow Skiing 5">
+                <img src="static/Skiing/ski3.jpg" alt="Snow Skiing 6">
+                <img src="static/Skiing/ski4.jpg" alt="Snow Skiing 7">
+                <img src="static/Skiing/ski5.jpg" alt="Snow Skiing 8">
+                <img src="static/Skiing/ski6.jpg" alt="Snow Skiing 9">
+                <img src="static/Skiing/ski7.jpg" alt="Snow Skiing 10">
+                <img src="static/Skiing/ski8.jpg" alt="Snow Skiing 11">
+            </div>
+        </section>
+
+        <section class="video-section">
+          <h2>Videos</h2>
+          <div class="video-slideshow">
+              <button id="prevBtn" class="slideshow-btn">❮</button>
+              <div class="video-wrapper">
+                <video controls>
+                  <source src="static/Water Skiing/Water Skiing - Made with Clipchamp (1).mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+               </video>  
+                <video controls>
+                      <source src="static/Water Skiing/ski4.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <video controls>
+                      <source src="static/Water Skiing/ski5.mov" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+              </div>
+              <button id="nextBtn" class="slideshow-btn">❯</button>
+          </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Carl's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="js/interests.js"></script>
+</body>
+</html>

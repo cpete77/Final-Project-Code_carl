@@ -1,0 +1,229 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    height: 100vh;
+  }
+  
+  .header {
+    grid-area: header;
+    background: linear-gradient(45deg, lightblue, darkblue);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  
+  header .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+   header  nav ul li {
+      margin-right: 10px;
+      position: relative;
+    }
+    
+    header  nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+  
+    header nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: white;
+      left: 50%;
+      bottom: 0;
+      transition: all 0.3s ease;
+    }
+  
+    header nav ul li a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    header nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: white;
+      color: #333;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .dropdown-menu li {
+      padding: 5px 15px;
+    }
+    
+    .dropdown-menu li a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 5px 10px;
+    }
+    
+    .dropdown-menu li a:hover {
+      background: darkblue;
+      color: white;
+      border-radius: 3px;
+    }
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav ul li {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+    .header .logo {
+      font-size: 1rem;
+    }
+  
+    .header nav ul li a {
+      font-size: 0.9rem;
+    }
+  
+    .footer {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-header h1 {
+    font-size: 2rem;
+    color: darkblue;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #b4b4b4;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: lightblue;
+  box-shadow: 0 0 5px lightblue;
+  outline: none;
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+  
+  .contact-form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .contact-form button {
+    background: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background: lightblue;
+  }
+  
+  .success-message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+  }
+  
