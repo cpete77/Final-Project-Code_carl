@@ -237,3 +237,36 @@ video {
 #nextBtn {
   right: 10px;
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .main .intro {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo {
+    font-size: 1rem;
+  }
+
+  .header nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
